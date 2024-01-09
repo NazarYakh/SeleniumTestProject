@@ -13,5 +13,9 @@ class HomePage:
         self.driver.find_element(*Locators.HomePage.shop_page).click()
         return ShopPage(self.driver)
 
+    def get_arrivals(self):
+        return self.driver.find_elements(*Locators.HomePage.arrivals)
+
+
 
 
