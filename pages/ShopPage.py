@@ -1,5 +1,4 @@
 from locators import Locators
-from pages.ConfirmPage import ConfirmPage
 
 
 class ShopPage:
