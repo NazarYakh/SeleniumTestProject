@@ -21,3 +21,6 @@ class BaseClass:
 
     def get_url(self):
         return self.driver.current_url
+
+    def navigate_to_the_previous_page(self):
+        self.driver.back()

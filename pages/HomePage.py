@@ -16,6 +16,12 @@ class HomePage:
     def get_arrivals(self):
         return self.driver.find_elements(*Locators.HomePage.arrivals)
 
-
-
+    def open_arrival(self, arrival):
+        if arrival == "First":
+            arrival = 0
+        elif arrival == "Second":
+            arrival = 1
+        elif arrival == "Third":
+            arrival = 2
+        self.get_arrivals()[arrival].click()
 
