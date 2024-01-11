@@ -56,5 +56,15 @@ class TestHomePage(BaseClass):
         assert part_of_description in product_description, \
             "Part of description were are looking for should be in Product description"
 
-        
+    def test_arrival_reviews(self):
+        home_page = HomePage(self.driver)
+
+        '''You can choose product by name ex. "Selenium Ruby"'''
+        item_page = home_page.select_arrival_by_name('Selenium Ruby')
+
+        product_name = item_page.get_product_name()
+        item_page.go_to_reviews()
+        product_name_in_reviews = item_page.get_product_name_from_reviews()
+
+        assert product_name in product_name_in_reviews, "Product name should present be in Reviews tab"
 
