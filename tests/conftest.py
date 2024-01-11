@@ -20,7 +20,7 @@ def setup(request):
         driver = webdriver.Firefox()
     driver.get('https://practice.automationtesting.in/')
     driver.maximize_window()
-    driver.find_element(*Locators.HomePage.alert_window).click()
+    driver.find_element(*Locators.HomePageLocators.alert_window).click()
 
     request.cls.driver = driver
     yield
