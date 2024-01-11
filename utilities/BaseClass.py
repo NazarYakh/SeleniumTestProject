@@ -12,11 +12,11 @@ class BaseClass:
     driver: Chrome
 
     def go_to_the_shop_page(self):
-        self.driver.find_element(*Locators.HomePage.shop_page).click()
+        self.driver.find_element(*Locators.HomePageLocators.shop_page).click()
         return ShopPage(self.driver)
 
     def go_to_the_home_page(self):
-        self.driver.find_element(*Locators.HomePage.home_page_icon).click()
+        self.driver.find_element(*Locators.HomePageLocators.home_page_icon).click()
         return HomePage(self.driver)
 
     def get_url(self):

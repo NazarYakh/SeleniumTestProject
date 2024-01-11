@@ -11,11 +11,11 @@ class HomePage:
         self.driver = driver
 
     def go_to_the_shop_page(self):
-        self.driver.find_element(*Locators.HomePage.shop_page).click()
+        self.driver.find_element(*Locators.HomePageLocators.shop_page).click()
         return ShopPage(self.driver)
 
     def get_arrivals(self):
-        return self.driver.find_elements(*Locators.HomePage.arrivals)
+        return self.driver.find_elements(*Locators.HomePageLocators.arrivals)
 
     def open_arrival(self, arrival):
         if arrival == "First":
@@ -28,6 +28,6 @@ class HomePage:
         return ItemPage(self.driver)
 
     def select_arrival_by_name(self, arrival_name):
-        item = (Locators.HomePage.arrival_by_name % arrival_name)
+        item = (Locators.HomePageLocators.arrival_by_name % arrival_name)
         self.driver.find_element(By.XPATH, item).click()
         return ItemPage(self.driver)
