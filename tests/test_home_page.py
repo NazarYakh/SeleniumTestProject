@@ -53,5 +53,8 @@ class TestHomePage(BaseClass):
 
         product_description = item_page.get_description()
 
-        assert part_of_description in product_description
+        assert part_of_description in product_description, \
+            "Part of description were are looking for should be in Product description"
+
+        
 
