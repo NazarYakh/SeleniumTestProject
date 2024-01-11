@@ -1,5 +1,4 @@
-import time
-
+from pages.HomePage import HomePage
 from utilities.BaseClass import BaseClass
 
 
@@ -43,3 +42,16 @@ class TestHomePage(BaseClass):
         current_url = self.get_url()
 
         assert current_url == home_page_url, "Seems like you are not on the home page"
+
+    def test_description_match(self):
+        part_of_description = 'HTML practically so that we can understand the markup of a web page'
+
+        home_page = HomePage(self.driver)
+
+        '''You can choose product by name ex. "'Thinking in HTML'"'''
+        item_page = home_page.select_arrival_by_name('Thinking in HTML')
+
+        product_description = item_page.get_description()
+
+        assert part_of_description in product_description
+

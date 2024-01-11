@@ -1,6 +1,7 @@
-from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.by import By
 
 from locators import Locators
+from pages.ItemPage import ItemPage
 from pages.ShopPage import ShopPage
 
 
@@ -24,4 +25,9 @@ class HomePage:
         elif arrival == "Third":
             arrival = 2
         self.get_arrivals()[arrival].click()
+        return ItemPage(self.driver)
 
+    def select_arrival_by_name(self, arrival_name):
+        item = (Locators.HomePage.arrival_by_name % arrival_name)
+        self.driver.find_element(By.XPATH, item).click()
+        return ItemPage(self.driver)
