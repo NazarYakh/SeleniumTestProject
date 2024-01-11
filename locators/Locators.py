@@ -11,5 +11,8 @@ class HomePageLocators:
 
 class ItemPageLocators:
     product_description = (By.CSS_SELECTOR, "div[id='tab-description'] p")
+    product_name = (By.CSS_SELECTOR, ".product_title.entry-title")
+    product_reviews = (By.CSS_SELECTOR, "a[href='#tab-reviews']")
+    product_name_in_reviews = (By.CSS_SELECTOR, "#reply-title")
 
 
